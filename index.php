@@ -3,29 +3,6 @@
 
 <a class="btn btn-primary" href="tambah.php" >Tambah Data</a>
 <table class="table table-striped table-bordered table-hover">
-<?php
-$server = "localhost";//hosting atau IP
-$user = "root";//tergantung masing-masing xampp
-$password = "";//tergantung masing-masing xampp
-$database ="kk_rusdy";
-
-//koneksi database
-$koneksi = mysqli_connect($server,$user,$password,$database);
-
-if($koneksi){
-    echo "Koneksi berhasil";
-}else{
-    echo "koneksi gagal";
-}
-
-echo '<br>ambil Data <hr>';
-
-$sql="SELECT * FROM penduduk";
-$query = mysqli_query($koneksi, $sql);
-?>
-
-<a class="btn btn-primary" href="tambah.php" >Tambah Data</a>
-<table class="table table-striped table-bordered table-hover">
     <tr>
         <th class="text-center">No</th>
         <th class="text-center">Nama Lengkap</th>
@@ -42,7 +19,6 @@ $query = mysqli_query($koneksi, $sql);
     $db = new Config();
     $data = $db->ambilSemua("SELECT * FROM penduduk");
     $no=1;
-    //while ($data = mysqli_fetch_array($query)){
     foreach($hasil as $data){
         echo '<tr>';
         echo '<td class="text-center">'.$no.'</td>';
@@ -58,13 +34,13 @@ $query = mysqli_query($koneksi, $sql);
                 <a onclick="return confirm(`Anda yakin hapus ?`)" class="btn btn-danger btn-xs" href="hapus.php?id='.$data['nik'].'"> Hapus </a>
             </td>';
         echo "</tr>";
-        $no = $no++;
+        $no++;
     }
     ?>
     <tr>
     	<th class="text-center"colspan="2">Total Data</th>
     	<th class="text-center"colspan="7">
-	     <span class="label label-primary"><?= mysqli_num_rows($query) ?></span>
+	     <span class="label label-primary"><?= count($hasil) ?></span>
     	</th>
     </tr>
 </table>

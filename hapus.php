@@ -1,19 +1,15 @@
-<?php
-$nik = $_POST['id'];
+<?php 
+$nik = $_GET['id'];
 
-$server = "localhost";
-$user = "root";
-$password = "";
-$database = "kk_rusdy";
+include 'config.php';
+$db = new Config();
 
-# Koneksi database
-$koneksi = mysqli_connect($server, $user, $password, $database);
+$sql = "DELETE FROM tb_penduduk WHERE nik ='$nik'";
 
-$sql = "DELETE FROM penduduk WHERE nik ='$nik'";
-$query = mysqli_query($koneksi, $sql);
+$query = $db->aksiQuery($sql);
 if($query){
-    header('Location: index.php');
+   header('Location: index.php');
 }else{
-    die("Data Gagal Diubah");
+   die('Data Gagal Dihapus');
 }
 ?>

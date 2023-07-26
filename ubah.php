@@ -2,19 +2,11 @@
 <?php
 $nik = $_GET['id'];
 
-$server = "localhost";
-$user = "root";
-$password = "";
-$database = "kk_rusdy";
-
-// Koneksi ke database
-$koneksi = mysqli_connect($server, $user, $password, $database);
+include 'config.php';
+$db = new Config();
 
 $sql = "SELECT * FROM penduduk WHERE nik={$nik}";
-$query = mysqli_query($koneksi, $sql);
-$data = mysqli_fetch_assoc($query);
-
-print_r($data);
+$data = $db->ambilSatu($sql);
 ?>
 <hr>
 <form action="ubah_aksi.php?id=<?= $nik?>" name="from" method="POST">
