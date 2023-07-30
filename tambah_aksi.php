@@ -1,10 +1,10 @@
 <?php
 $nama = $_POST ['nama_lengkap'];
 $nik = $_POST['nik'];
-$kelamin = $_POST ['Jenis_kelamin'];
+$kelamin = $_POST ['jenis_kelamin'];
 $agama = $_POST ['agama'];
 $tempat = $_POST ['tempat_lahir'];
-$tanggal = $_POST ['Tanggal_lahir'];
+$tanggal = $_POST ['tanggal_lahir'];
 $darah = $_POST ['golongan_darah'];
 
 include 'config.php';

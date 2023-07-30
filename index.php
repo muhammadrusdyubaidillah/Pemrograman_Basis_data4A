@@ -17,9 +17,9 @@
     <?php
     include 'config.php';
     $db = new Config();
-    $data = $db->ambilSemua("SELECT * FROM penduduk");
+    $hasil = $db->ambilSemua("SELECT * FROM penduduk");
     $no = 1;
-    foreach($hasil as $data){
+    foreach ($hasil as $data){
         echo '<tr>';
         echo '<td class="text-center">'.$no.'</td>';
         echo '<td class="text-center">'.$data['nama_lengkap'].'</td>';
@@ -34,12 +34,12 @@
                 <a onclick="return confirm(`Anda yakin hapus ?`)" class="btn btn-danger btn-xs" href="hapus.php?id='.$data['nik'].'"> Hapus </a>
             </td>';
         echo "</tr>";
-        $no++;
+        $no = $no + 1;
     }
     ?>
     <tr>
-    	<th class="text-center"colspan="2">Total Data</th>
-    	<th class="text-center"colspan="7">
+    	<th class="text-center" colspan="2">Total Data</th>
+    	<th class="text-center" colspan="7">
 	     <span class="label label-primary"><?= count($hasil) ?></span>
     	</th>
     </tr>
