@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="bootstrap.css">
 <h1 class="text-primary">Kartu Keluarga</h1>
 
-<a class="btn btn-primary" href="tambah.php" >Tambah Data</a>
+<a class="btn btn-primary" href="tambah.php">Tambah Data</a>
 <table class="table table-striped table-bordered table-hover">
     <tr>
         <th class="text-center">No</th>
@@ -18,7 +18,7 @@
     include 'config.php';
     $db = new Config();
     $data = $db->ambilSemua("SELECT * FROM penduduk");
-    $no=1;
+    $no = 1;
     foreach($hasil as $data){
         echo '<tr>';
         echo '<td class="text-center">'.$no.'</td>';

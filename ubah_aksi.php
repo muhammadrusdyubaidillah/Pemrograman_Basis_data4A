@@ -11,7 +11,8 @@ include 'config.php';
 $db = new Config();
 
 $sql = "UPDATE penduduk  SET nama_lengkap='$nama',jenis_kelamin='$kelamin',agama='$agama',tempat_lahir='$tempat',tanggal_lahir='$tanggal',golongan_darah='$darah' WHERE nik={$nik}";
-$query = mysqli_query($koneksi, $sql);
+
+$query = $db->aksiQuery($sql);
 if($query){
     header('Location: index.php');
 }else{

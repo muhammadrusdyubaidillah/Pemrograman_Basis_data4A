@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="bootstrap.css">
 <?php
 $nik = $_GET['id'];
-
 include 'config.php';
 $db = new Config();
 

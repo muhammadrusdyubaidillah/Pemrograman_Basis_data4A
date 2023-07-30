@@ -11,7 +11,8 @@ include 'config.php';
 $db = new Config();
 
 $sql = "INSERT INTO penduduk(nama_lengkap,nik,jenis_kelamin,agama,tempat_lahir,tanggal_lahir,golongan_darah) VALUES ('$nama','$nik','$kelamin','$agama','$tempat','$tanggal','$darah')";
-$query = mysqli_query($koneksi, $sql);
+
+$query = $db->aksiQuery($sql);
 if($query){
     header('Location: index.php');
 }else{

@@ -21,6 +21,10 @@ class Config {
         return $hasil;
     }
     public function ambilSatu($sql){
+        $hasil = $this->connect->query($sql)->fetch_assoc();
+        return $hasil;
+    }
+    public function aksiQuery($sql){
         return $this->connect->query($sql);
     }
 }
