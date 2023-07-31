@@ -3,7 +3,7 @@
 $nik = $_GET['id'];
 
 include 'config.php';
-$db = new Config();
+$db = new config();
 
 $sql = "SELECT * FROM penduduk WHERE nik={$nik}";
 $data = $db->ambilSatu($sql);

@@ -2,7 +2,7 @@
 $nik = $_GET['id'];
 
 include 'config.php';
-$db = new Config();
+$db = new config();
 
 $sql = "DELETE FROM penduduk WHERE nik ='$nik'";
 
