@@ -4,7 +4,7 @@ $nik = $_GET['id'];
 include 'config.php';
 $db = new Config();
 
-$sql = "DELETE FROM tb_penduduk WHERE nik ='$nik'";
+$sql = "DELETE FROM penduduk WHERE nik ='$nik'";
 
 $query = $db->aksiQuery($sql);
 if($query){
