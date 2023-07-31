@@ -28,3 +28,5 @@ class Config {
         return $this->connect->query($sql);
     }
 }
+
+?>
